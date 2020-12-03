@@ -1,6 +1,6 @@
 {
   "name": "axios-api-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "API request Library Based on Axios",
   "main": "src/index.js",
   "author": "guokai <feimao9090@163.com>",

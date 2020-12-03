@@ -1,16 +1,16 @@
 # Axios Api Library
 
-English | [简体中文](./README-ZH.md)
+[English](./README.md) | 简体中文
 
-API request Library Based on Axios
+基于 Axios 二次封装的 Api 库
 
-## Table of Contents
+## 目录
 
-- [Install](#install)
-- [Usage](#usage)
-  - [Basic](#basic)
-  * [Configure Axios](#configure-axios)
-  * [Sample API Configuration](#sample-api-configuration)
+- [安装](#安装)
+- [使用说明](#使用说明)
+  - [基本使用](#基本使用)
+  * [Axios 配置](#Axios-配置)
+  * [Api 模块配置](#Api-模块配置)
 
 ## Install
 
@@ -22,19 +22,22 @@ $ npm i axios-api-lib
 $ yarn add axios-api-lib
 ```
 
-## Usage
+## 使用说明
 
-### Basic
+### 基本使用
 
 **api.js**
 
 ```js
 import { request } from 'axios-api-lib'
 
+// 导入user模块
 import user from './user'
 
+// 注入到request中
 request.use('user', user)
 
+// 接口调用方式
 request.user.fetch()
 ```
 
@@ -46,41 +49,44 @@ export default {
 }
 ```
 
-### Configure Axios
+### Axios 配置
 
 ```js
 import { http, request } from 'axios-api-lib'
 
-// [Global axios defaults](https://github.com/axios/axios#global-axios-defaults)
+// Axios全局配置 [参考地址](https://github.com/axios/axios#global-axios-defaults)
 http.defaults.baseURL = 'http://example.com'
 
-// Interceptors request response
+// Request拦截器  Response拦截器
 http.interceptors.request.use()
 
 http.interceptors.response.use()
 
-// Finally call request.setHttp method
-let req = request.setHttp(http)
+// 调用request.setHttp设置请求库
+// let req = request.setHttp(http)
 
-// set shake proof
-let req = req.setConfig({ shake: 1 })
+// 开启防抖功能
+// let req = req.setConfig({ shake: 1 })
+
+// 链式调用
+const req = request.setHttp(http).setConfig({ shake: 1 })
 
 export { http, req }
 ```
 
-### Sample API Configuration
+### Api 模块配置
 
 **Configuration**
 
 ```js
 // user.js
 export default {
-  // Get Request
+  // Get请求
   fetch: {
     url: 'users',
     method: 'get',
   }
-  // Put Request and Dynamic URL
+  // 动态URL
   update: {
     url: 'user/:id',
     method: 'put'
