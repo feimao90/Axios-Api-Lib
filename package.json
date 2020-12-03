@@ -1,14 +1,23 @@
 {
   "name": "axios-api-lib",
   "version": "0.1.0",
-  "description": "",
+  "description": "API request Library Based on Axios",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "feimao9090@163.com",
+  "author": "guokai <feimao9090@163.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feimao90/Axios-Api-Lib.git"
+  },
+  "keywords": [
+    "axios",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/feimao90/Axios-Api-Lib/issues"
+  },
+  "homepage": "https://github.com/feimao90/Axios-Api-Lib#readme"
 }

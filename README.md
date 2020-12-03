@@ -13,7 +13,7 @@
 ```sh
 npm i axios-api-lib
 
-or
+#or
 
 yarn add axios-api-lib
 ```
